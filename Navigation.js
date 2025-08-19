@@ -10,6 +10,8 @@ import { Text, Image } from 'react-native';
 
 //Screens
 import HomeScreen from "./src/screens/home/HomeScreen.js";
+import LoginScreen from "./src/screens/login/LoginScreen.js";
+import PerfilScreen from "./src/screens/Perfil/PerfilScreen.js";
 
 //Stacks
 const Stack = createNativeStackNavigator();
@@ -23,14 +25,22 @@ function MyStackPrincipal() {
 
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="Login"
       screenOptions={{
         headerTintColor: "#000", // Color del texto del header
         headerStyle: {
-          backgroundColor: "#1e1e1e", // Color de fondo del header
+          backgroundColor: "#FFF", // Color de fondo del header
         },
       }}
     >
+      <Stack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{
+          headerShown: true,
+          title: "Inicio de sesion", // Título vacío
+        }}
+      />
       <Stack.Screen
         name="Home"
         component={TabsNavigator}
@@ -80,6 +90,42 @@ function MyStackHome() {
   );
 }
 
+function MyStackPerfil() {
+
+  return (
+    <StackHome.Navigator
+      initialRouteName="PerfilScreen"
+      screenOptions={{
+        headerShown: true,
+        headerTintColor: "#000", // Color del texto del header
+        headerStyle: {
+          backgroundColor: "#FFF", // Color de fondo del header
+        },
+      }}
+    >
+      <StackHome.Screen
+        name="PerfilScreen"
+        component={PerfilScreen}
+        options={{
+          headerShown: true,
+          title: "Perfil", // Título vacío
+          headerTintColor: "#000", // Color del texto o íconos del header
+          headerTitleStyle: {
+            fontFamily: "Poppins_600SemiBold", // Fuente personalizada
+            fontSize: 25, // Tamaño de fuente (opcional)
+          },
+          headerLeft: () => (
+            <Image
+              source={require('./assets/icon.png')} // Asegúrate de que la ruta sea correcta
+              style={{ width: 35, resizeMode: 'contain', height: 35, marginRight: 10 }} // Cambiado "with" a "width"
+            />
+          ),
+        }}
+      />
+    </StackHome.Navigator>
+  );
+}
+
 function TabsNavigator() {
 
 
@@ -108,7 +154,7 @@ function TabsNavigator() {
       />
       <Tab.Screen
         name="Perfil"
-        component={MyStackHome}
+        component={MyStackPerfil}
         options={{
           headerShown: false,
           tabBarLabel: ({ color }) => (

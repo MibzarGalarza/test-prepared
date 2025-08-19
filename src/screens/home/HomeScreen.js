@@ -4,7 +4,6 @@ import { getCharacter } from '../../services/api';
 import { useFocusEffect } from '@react-navigation/native';
 import CardsUser from '../../components/CardsUser';
 import LoadingAnimation from '../../animations/AnimationLoading';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const HomeScreen = () => {
 
