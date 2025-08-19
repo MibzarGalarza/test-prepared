@@ -25,7 +25,7 @@ function MyStackPrincipal() {
 
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="Home"
       screenOptions={{
         headerTintColor: "#000", // Color del texto del header
         headerStyle: {
