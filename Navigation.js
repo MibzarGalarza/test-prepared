@@ -152,21 +152,6 @@ function TabsNavigator() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Perfil"
-        component={MyStackPerfil}
-        options={{
-          headerShown: false,
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color, fontFamily: "Poppins_600SemiBold", fontSize: 13, marginTop: 5 }}>
-              Perfil
-            </Text>
-          ),
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
-          ),
-        }}
-      />
     </Tab.Navigator>
   );
 }
